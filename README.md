@@ -16,7 +16,7 @@ The protocol can then be implemented using the `defmtype` form.
 
 ```clj
 (defmtype arith-exec arith
-  (:default [arg] (flush) arg)
+  (:default [arg] arg)
   (add [op & args] `(+ ~@(mapv #(do `(arith ~%)) args)))
   (mul [op & args] `(* ~@(mapv #(do `(arith ~%)) args))))
 ```
