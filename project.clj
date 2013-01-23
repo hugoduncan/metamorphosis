@@ -1,4 +1,4 @@
-(defproject metamorphosis "0.1.0-SNAPSHOT"
+(defproject metamorphosis "0.1.0"
   :description "Macro protocols for clojure"
   :url "https://github.com/hugoduncan/metamorphosis"
   :license {:name "Eclipse Public License"
