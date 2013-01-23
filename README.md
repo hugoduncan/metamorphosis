@@ -36,15 +36,19 @@ Metamorphosis is released to Clojars.
 
 With Leiningen:
 
+```clj
 [metamorphosis "0.1.0"]
+```
 
 With Maven:
 
+```xml
 <dependency>
   <groupId>metamorphosis</groupId>
   <artifactId>metamorphosis</artifactId>
   <version>0.1.0</version>
 </dependency>
+```
 
 ## License
 
