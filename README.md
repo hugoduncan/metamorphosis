@@ -28,7 +28,7 @@ implementation:
 (arith-exec (add 1 (mul 2 3))) => 7
 ```
 
-[API docs](https://hugoduncan.github.com/metamorphosis/api/0.1)
+[API docs](http://hugoduncan.github.com/metamorphosis/api/0.1)
 
 ## Artifacts
 
