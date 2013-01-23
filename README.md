@@ -28,7 +28,7 @@ implementation:
 (arith-exec (add 1 (mul 2 3))) => 7
 ```
 
-[API docs](https://hugoduncan.github.com/metamorphosis/api/0.1)
+[API docs](http://hugoduncan.github.com/metamorphosis/api/0.1)
 
 ## Artifacts
 
@@ -36,15 +36,19 @@ Metamorphosis is released to Clojars.
 
 With Leiningen:
 
+```clj
 [metamorphosis "0.1.0"]
+```
 
 With Maven:
 
+```xml
 <dependency>
   <groupId>metamorphosis</groupId>
   <artifactId>metamorphosis</artifactId>
   <version>0.1.0</version>
 </dependency>
+```
 
 ## License
 
