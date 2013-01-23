@@ -41,7 +41,8 @@ A second implementation could just produce a data-structure.
   => {:op 'clojure.core/+ :args [1 {:op clojure.core/* :args [2 3]}]}
 ```
 
-[API docs](http://hugoduncan.github.com/metamorphosis/api/0.1)
+[API docs](http://hugoduncan.github.com/metamorphosis/api/0.1) &#xb7;
+[Annotated Source](http://hugoduncan.github.com/metamorphosis/annotated/0.1/uberdoc.html)
 
 ## Artifacts
 
