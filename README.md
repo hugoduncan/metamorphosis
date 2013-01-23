@@ -32,7 +32,7 @@ implementation:
 
 ## Artifacts
 
-Metamorphosis is released to Clojars.
+Metamorphosis is released to [Clojars](https://clojars.org/metamorphosis).
 
 With Leiningen:
 
