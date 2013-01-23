@@ -27,6 +27,19 @@ implementation:
 ```clj
 (arith-exec (add 1 (mul 2 3))) => 7
 ```
+A second implementation could just produce a data-structure.
+
+```clj
+(defmtype arith-data arith
+  (:default [arg] (if (symbol? arg) (list 'quote arg) arg))
+  (add [op & args] `{:op '+ :args ~(mapv #(do `(arith ~%)) args)})
+  (mul [op & args] `{:op '* :args ~(mapv #(do `(arith ~%)) args)}))
+```
+
+```clj
+(arith-data (add 1 (mul 2 3)))
+  => {:op 'clojure.core/+ :args [1 {:op clojure.core/* :args [2 3]}]}
+```
 
 [API docs](http://hugoduncan.github.com/metamorphosis/api/0.1)
 
