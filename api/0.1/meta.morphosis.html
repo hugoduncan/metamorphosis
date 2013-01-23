@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <title>meta.morphosis documentation</title>
+    <link href="css/default.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/page_effects.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="header">
+        <h1 class="project-title">Metamorphosis 0.1 API documentation</h1>
+      </div>
+    </header>
+    <navigation>
+      <div id="namespaces" class="sidebar">
+        <h3>Namespaces</h3>
+        <ul class="ns-links">
+          <li class="ns-link"><a href="meta.morphosis.html">meta.morphosis</a></li>
+        </ul>
+      </div>
+      <div id="vars" class="sidebar">
+        <h3>Public Vars</h3>
+        <ul class="ns-var-links">
+          <li class="ns-var-link"><a href="meta.morphosis.html#var-defmprotocol">defmprotocol</a></li><li class="ns-var-link"><a href="meta.morphosis.html#var-defmtype">defmtype</a></li><li class="ns-var-link"><a href="meta.morphosis.html#var-resolved-symbol">resolved-symbol</a></li><li class="ns-var-link"><a href="meta.morphosis.html#var-symbol-for">symbol-for</a></li>
+        </ul>
+      </div>
+    </navigation>
+    <article>
+      <div id="content" class="namespace-docs">
+        <h2 class="namespace-title">meta.morphosis documentation</h2>
+        <div class="doc"><p>Macro protocols.</p>
+</div>
+        <div class="ns-vars">
+          <div class="public">
+            <h3 id="var-defmprotocol">defmprotocol</h3>
+            <div class="usage">[pname &amp; fns]</div>
+            
+            
+            <div class="doc"><p>Define a macro protocol. Within the scope of any implementation, the
+macros defined in the protocol will be dispatched to the implementation.</p>
+
+<pre><code>(defmprotocol mp
+  ; macro signatures
+  (bar [this a b] "bar docs")
+  (baz [this a] "baz docs"))
+</code></pre>
+
+<p>Implementations are provided using the <code>defmtype</code> macro.</p>
+</div>
+          </div><div class="public">
+            <h3 id="var-defmtype">defmtype</h3>
+            <div class="usage">[tname pname &amp; fn-impls]</div>
+            
+            
+            <div class="doc"><p>Provides an implementation of a macro protocol defined with <code>defmprotocol</code>.</p>
+
+<pre><code> (defmtype name mprotocol
+   (bar [op a b] `(do 'some 'code))
+   (baz [op a] (list 'quote (symbol "something-else"))))
+</code></pre>
+
+<p>Apart from the macro functions defined in the protocol, you may
+also provide a <code>:default</code> function, that is called on any form that
+doesn't match a macro protocol function.</p>
+
+<p>A <code>:dispatch</code> function can also be provided, that overrides the
+default macro body for the macro type.</p>
+</div>
+          </div><div class="public">
+            <h3 id="var-resolved-symbol">resolved-symbol</h3>
+            <div class="usage">[x]</div>
+            
+            
+            <div class="doc"><p>Resolve symbol, and return a ns-qualified symbol.</p>
+</div>
+          </div><div class="public">
+            <h3 id="var-symbol-for">symbol-for</h3>
+            <div class="usage">[v-sym kw suffix]</div>
+            
+            
+            <div class="doc"><p>Return a symbol based on the var's name and suffix, using the value provided
+by looking up the given kw in the given var's metadata.  This allows the value
+to be cached in the metadata.</p>
+</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+
+</html>
