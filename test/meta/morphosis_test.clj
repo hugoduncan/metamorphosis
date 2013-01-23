@@ -21,15 +21,23 @@
   (add [op & args] `{:op '+ :args ~(mapv #(do `(arith ~%)) args)})
   (mul [op & args] `{:op '* :args ~(mapv #(do `(arith ~%)) args)}))
 
+(in-ns 'meta.morphosis-test)
+
 (deftest arith-exec-test
   (testing "arith-exec"
     (testing "evaluation"
       (is (= 1 (arith-exec 1)))
       (is (= 3 (arith-exec (add 1 2))))
       (is (= 2 (arith-exec (mul 1 2))))
-      (is (= 7 (arith-exec (add 1 (mul 2 3))))))
+      (is (= 7 (arith-exec (add 1 (mul 2 3))))))))
+
+
+;; These fail when tun with lein test
+;; https://github.com/technomancy/leiningen/issues/912
+(deftest ^:not-lein arith-exec-expansion-test
+  (testing "arith-exec"
     (testing "expansion"
-      (is (= 1 (macroexpand `(arith-exec 1))))
+      (is (= 1 (macroexpand-all `(arith-exec 1))))
       (is (= `(+ 1 2) (macroexpand-all `(arith-exec (add 1 2)))))
       (is (= `(* 1 2) (macroexpand-all `(arith-exec (mul 1 2)))))
       (is (= `(+ 1 (* 2 3))
