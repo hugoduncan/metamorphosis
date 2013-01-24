@@ -1,6 +1,8 @@
 # metamorphosis
 
-Macro protocols for clojure.
+Macro protocols for clojure.  Lets you write a form using macros defined by a
+macro protocol, and have that form expanded differently depending on which
+implementation of the protocol it is wrapped in.
 
 ## Usage
 
